@@ -4,7 +4,7 @@
  *@line: line
  *@num: number of line
  */
-void exec_line_ops(char *line, size_t num)
+void executes_com(char *line, size_t num)
 {
 	char *comm = strtok(line, DELIMS);
 

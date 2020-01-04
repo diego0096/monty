@@ -4,7 +4,7 @@
  *free_at_exit - free allocated memory at exit
  *Description: free memory
  */
-void free_at_exit(void)
+void free_ex(void)
 {
     free_stack_t(global.stack);
     fclose(global.file);

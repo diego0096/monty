@@ -53,7 +53,7 @@ typedef struct global_state
 
 extern state_t global;
 
-void exec_line_ops(char *line, size_t num);
+void executes_com(char *line, size_t num);
 void fetch_instruction(char *comm, size_t num);
 
 void _push(stack_t **stack, unsigned int line_number);
@@ -64,6 +64,6 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 
-void free_at_exit(void);
+void free_ex(void);
 void free_stack_t(stack_t *top);
 #endif /*_MONTY_H_*/
