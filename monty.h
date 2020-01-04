@@ -1,3 +1,12 @@
+#ifndef MONTY
+#define MONTY
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define DELIMS " \n\r\t"
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -9,9 +18,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+		int n;
+		struct stack_s *prev;
+		struct stack_s *next;
 } stack_t;
 
 /**
@@ -24,6 +33,39 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ *struct global_state - global variable
+ *@stack: global stack for opcode read-writes
+ *@line: line allocated by getline
+ *@file: file opened in main
+ *Description: global variable
+ */
+typedef struct global_state
+{
+	stack_t   *stack;    /* global stack for opcode read-writes */
+	char       *line;    /* line allocated by getline */
+	FILE       *file;    /* file opened in main */
+} state_t;
+
+extern state_t global;
+
+
+/* line handlers */
+void exec_line_ops(char *line, size_t num);
+void fetch_instruction(char *comm, size_t num);
+
+/* opcode handlers */
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+
+/* memory management utils */
+void free_at_exit(void);
+void free_stack_t(stack_t *top);
+#endif /*_MONTY_H_*/
