@@ -53,19 +53,17 @@ typedef struct global_state
 
 extern state_t global;
 
-
-/* line handlers */
 void exec_line_ops(char *line, size_t num);
 void fetch_instruction(char *comm, size_t num);
 
-/* opcode handlers */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
 
-/* memory management utils */
 void free_at_exit(void);
 void free_stack_t(stack_t *top);
 #endif /*_MONTY_H_*/
