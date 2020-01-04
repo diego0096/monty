@@ -24,8 +24,8 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	atexit(free_at_exit);
+	atexit(free_ex);
 	while (getline(&global.line, &lenght, global.file) != -1)
-		exec_line_ops(global.line, ++num);
+		executes_com(global.line, ++num);
 	return (EXIT_SUCCESS);
 }
