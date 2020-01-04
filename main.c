@@ -5,8 +5,9 @@ state_t global = {NULL, NULL, NULL};
 
 /**
  * main - entry point to program
- * @argc: number of arguments passed to program
- * @argv: ref to array of arguments passed to program
+ *
+ * @argc: number of arguments.
+ * @argv: ref to array of arguments.
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 int main(int argc, char **argv)
@@ -15,7 +16,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fputs("USAGE: monty file\n", stderr);
+		fprintf(stdout, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	global.file = fopen(argv[1], "r");
