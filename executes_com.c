@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- *exec_line_ops - read line
+ *executes_com - read line
  *@line: line
  *@num: number of line
  */

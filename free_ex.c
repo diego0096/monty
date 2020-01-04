@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- *free_at_exit - free allocated memory at exit
+ *free_ex - free allocated memory at exit
  *Description: free memory
  */
 void free_ex(void)
