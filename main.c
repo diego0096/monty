@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		fprintf(stdout, "USAGE: monty file\n");
+		fputs("USAGE: monty file\n", stderr);
 		exit(EXIT_FAILURE);
 	}
 	global.file = fopen(argv[1], "r");

@@ -31,6 +31,9 @@ void fetch_instruction(char *comm, size_t num)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
 		{NULL, NULL}
 	};
 
